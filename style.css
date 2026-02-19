@@ -52,11 +52,18 @@ body {
     align-items: center;
     gap: 10px;
 }
-.mylearning{
+
+.menubar {
+    display: none;
+}
+
+
+.mylearning {
     position: relative;
     cursor: pointer;
 }
-.mylearning:hover .mylearning-poppup{
+
+.mylearning:hover .mylearning-poppup {
 
     display: block;
 }
@@ -69,7 +76,7 @@ body {
     width: 100px;
     position: absolute;
     padding: 20px;
-    top:150%;
+    top: 150%;
     right: 0;
     display: none;
 
@@ -100,7 +107,7 @@ body {
     color: black;
     border: solid black 1px;
 
-   
+
 
 }
 
@@ -133,26 +140,50 @@ body {
     opacity: 0;
     animation-fill-mode: forwards;
 }
+
+
+/*.sale__image-offer {
+
+    width: 35%;
+    padding: 2%;
+    top:10%;
+    left:10%;
+
+    border: solid black 1px;
+    
+    background-color: white;
+    color: black;
+
+    position: absolute;
+   
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}*/
+
 @keyframes zoom {
-    0%{
+    0% {
         transform: scale(0);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: scale(1);
         opacity: 1;
     }
 }
-    
-}
+
 
 .sale__image-offer p {
     padding-top: 10px;
 }
 
 .card__img {
-    height: 300px;
-    width: 280px;
+    /* height: 300px;
+    width: 280px; */
+    width: 100%;
+    height: auto;
 }
 
 .recommended {
@@ -166,9 +197,19 @@ body {
 }
 
 .card {
+    flex-grow: 1;
+    flex-basis: 20%;
+
+
+}
+
+/* changes 
+   .card {
     padding: 10px;
     margin: 10px;
-}
+  }    
+ */
+
 
 .topics {
     margin: 10px;
@@ -203,17 +244,26 @@ body {
 }
 
 .popular__imagesection {
+    padding-top: 10px;
     display: flex;
     gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
+/* changes 
 .popular__img {
     margin: 10px;
     padding: 10px;
     width: 23%;
 }
+ */
+.popular__img {
+    flex-grow: 1;
+    flex-basis: 20%;
+
+}
+
 
 
 .footer {
@@ -245,4 +295,44 @@ body {
 .popular__img1 {
     width: 100%;
     height: auto;
+}
+
+
+/* Media Queries */
+@media screen and (max-width:800px) {
+    body {
+        font-size: 10px;
+    }
+
+    .sale__image-offer {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    .navbar__s2,
+    .navbar__s3,
+    .mylearning,
+    .navbar__s2 input {
+        display: none;
+    }
+    .menubar{
+        display: block;
+    }
+
+    .card {
+        flex-basis: 40%;
+    }
+
+    .popular__img {
+        flex-basis: 40%;
+    }
+
+    .catagories {
+        display: none;
+    }
+
+
 }
